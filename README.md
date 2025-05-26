@@ -42,11 +42,6 @@ This repository includes the implementation of the paper "MCMC for Bayesian esti
 ### Data
 - All experiment outputs and sample indices are stored in the `data/` directory. MATLAB scripts read these files for analysis and plotting.
 
-## References
-
-This codebase implements methods and experiments from:
-> "MCMC for Bayesian estimation of Differential Privacy from Membership Inference Attacks"
-
 ## Contact
 
 For questions, please contact [cerenyildirim@sabanciuniv.edu](mailto:cerenyildirim@sabanciuniv.edu).
