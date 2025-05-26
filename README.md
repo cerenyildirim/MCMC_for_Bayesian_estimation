@@ -1,6 +1,7 @@
 # MCMC for Bayesian Estimation of Differential Privacy from Membership Inference Attacks
 
-This repository contains MATLAB and Python code for Bayesian estimation of differential privacy (DP) parameters using Markov Chain Monte Carlo (MCMC) methods, with a focus on analyzing membership inference attacks (MIA). The code supports both artificial and real data experiments, and includes scripts for running attacks, estimating DP parameters, and visualizing results.
+This repository includes the implementation of the paper "MCMC for Bayesian estimation of Differential Privacy from Membership Inference Attacks" (https://www.arxiv.org/pdf/2504.16683). The code supports both artificial and real data experiments, and includes scripts for running attacks, estimating DP parameters, and visualizing results.
+
 
 ## File and Script Descriptions
 
