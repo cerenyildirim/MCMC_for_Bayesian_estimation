@@ -55,7 +55,7 @@ def run_real_data_experiments():
     L_f = len(filenames)
 
     # MCMC parameters
-    M = 100_000  # MCMC iterations (original was 100k)
+    M = 100_000  # MCMC iterations
     K = 1000     # Number of auxiliary variables
     delta_DP = 0.001
     sigma_q_vec = [0.1, 0.01, 0.001, 0.001]
@@ -66,7 +66,7 @@ def run_real_data_experiments():
     # Target alpha values
     alpha_vec = np.arange(0.01, 1.0, 0.01)
     L_a = len(alpha_vec)
-    n, N = 20, 100 # 20 MIAs, 100 tests each
+    n, N = 20, 100 # 20 MIAs each tested 100 times with H0 and 100 times with H1
 
     # Initialization
     # Using lists of lists of numpy arrays, equivalent to MATLAB's nested cell arrays
@@ -83,7 +83,6 @@ def run_real_data_experiments():
         l_0_matrix, l_1_matrix = read_losses(f'../data/{filename}')
 
         print("Calculating errors (Type I/II)...")
-        # Leave-one-out cross-validation to get error rates
         for h in [0, 1]:  # 0 for H0 is true, 1 for H1 is true
             for k in range(n):  # Challenge base
                 for j in range(N):  # Challenge instance
@@ -96,7 +95,6 @@ def run_real_data_experiments():
                         l1 = np.concatenate((l_1_matrix[k, :j], l_1_matrix[k, j+1:]))
                         l0 = l_0_matrix[k, :]
             
-                    # Fit H0 and H1 as normal distributions
                     mu_l0, var_l0 = np.mean(l0), np.var(l0, ddof=1)
                     mu_l1, var_l1 = np.mean(l1), np.var(l1, ddof=1)
                     
@@ -110,7 +108,7 @@ def run_real_data_experiments():
         for k in range(n):
             E[fn][k] = X[fn][k] + Y[fn][k]
 
-        # Plot the error lines (alpha vs beta) - Figure 4
+        # Plot the error lines (alpha vs beta)
         plt.figure(figsize=(5, 4.5))
         for k in range(n):
             plt.plot(np.mean(X[fn][k], axis=0), np.mean(Y[fn][k], axis=0), '.-')
@@ -146,7 +144,7 @@ def run_real_data_experiments():
         acf_results.append(acf_vals)
         lags_results.append(lags)
         
-        # 2D Histogram - Figure 5
+        # 2D Histogram
         plt.figure(figsize=(5, 4.5))
         plt.hist2d(theta_samps[0, M//2:], theta_samps[1, M//2:], bins=50, cmap='gray', density=True)
         plt.xlabel('$\\epsilon$')
@@ -169,7 +167,7 @@ def run_real_data_experiments():
     plt.savefig(os.path.join(foldername, 'auto_corr.pdf'))
     plt.close()
     
-    # MCMC trace plots - Figure 6
+    # MCMC trace plots
     fig, axes = plt.subplots(L_f, 4, figsize=(15, 12), sharex=True)
     param_titles = ['$\\epsilon$', '$s$', '$\\tau$', '$\\rho$']
     for fn in range(L_f):

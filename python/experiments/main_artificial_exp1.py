@@ -21,7 +21,7 @@ def run_experiment_1():
 
     # --- Parameters ---
     np.random.seed(1)
-    M = 1_000_000  # MCMC iterations (reduced for faster execution, original was 1M)
+    M = 1_000_000  # MCMC iterations
     K = 100       # Number of auxiliary variables
     delta_DP = 0.01
     sigma_qe = 0.1  # Proposal std for epsilon

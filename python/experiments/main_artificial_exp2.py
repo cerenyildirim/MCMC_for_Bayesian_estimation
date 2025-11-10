@@ -75,9 +75,7 @@ def run_experiment_2():
         eps_val = bin_edges[i+1]
         A, B = gen_beta_DP(eps_val, delta_DP)
         if i > 0:
-            # Create a polygon between the previous and current curve
             verts = np.vstack([np.column_stack([A, B]), np.column_stack([A_prev[::-1], B_prev[::-1]])])
-            # Color is based on the histogram height (posterior density)
             color_val = 1 - 0.7 * min(1, counts[i] / np.max(counts))
             poly = Polygon(verts, facecolor=str(color_val), edgecolor='none')
             ax1.add_patch(poly)
