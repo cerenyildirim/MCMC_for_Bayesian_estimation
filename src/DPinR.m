@@ -8,6 +8,6 @@ function [Y] = DPinR(A, B, eps_DP, delta_DP)
 Cond1 = A + exp(eps_DP)*B >= 1 - delta_DP;
 Cond2 = B + exp(eps_DP)*A >= 1 - delta_DP;
 Cond3 = A + exp(eps_DP)*B <= exp(eps_DP) + delta_DP;
-Cond4 = A + exp(eps_DP)*B <= exp(eps_DP) + delta_DP;
+Cond4 = B + exp(eps_DP)*A <= exp(eps_DP) + delta_DP;
 
 Y = Cond1 & Cond2 & Cond3 & Cond4;

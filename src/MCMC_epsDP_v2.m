@@ -119,7 +119,7 @@ for m = 1:M
         [InR_prop] = DPinR(A, B, eps_DP_prop, delta_DP).*(1 - DPinR(A, B, s_prop*eps_DP_prop, s_prop*delta_DP));
     
         AreaR_prop = 1 - 2 *(1 - delta_DP)^2*exp(-eps_DP_prop)/(1 + exp(-eps_DP_prop));
-        AreaR_prop_s = 1 - 2 *(1 - s*delta_DP)^2*exp(-s_prop*eps_DP_prop)/(1 + exp(-s_prop*eps_DP_prop));
+        AreaR_prop_s = 1 - 2 *(1 - s_prop*delta_DP)^2*exp(-s_prop*eps_DP_prop)/(1 + exp(-s_prop*eps_DP_prop));
     
         log_W_prop = PYX_prop + log(double(InR_prop)) - log(AreaR_prop - AreaR_prop_s);
         log_W_curr = PYX + log(double(InR_curr)) - log(AreaR_curr - AreaR_curr_s);
