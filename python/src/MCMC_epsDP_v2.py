@@ -54,7 +54,6 @@ def MCMC_epsDP_v2(N0, N1, X, Y, M, K, delta_DP, theta, sigma_q_vec, theta_hyper,
         rho_prop = rho + update_params[3] * np.random.randn() * sigma_q_vec[3]
 
         log_q_ratio = np.log(eps_DP_prop) - np.log(eps_DP)
-        print(log_q_ratio)
         
         min_bound_rho_prop = np.min(np.sqrt((1 + (N0 - 1) * tau_prop) * (1 + (N1 - 1) * tau_prop)) / np.sqrt(N0 * N1))
 

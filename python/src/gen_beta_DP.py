@@ -19,10 +19,8 @@ def gen_beta_DP(eps_DP, delta_DP):
 
     cond1 = x < c
     cond2 = (x >= c) & (x < (1 - delta_DP))
-    # cond3 (x >= 1 - delta_DP) is implicitly handled by initialization
 
     y[cond1] = 1 - delta_DP - np.exp(eps_DP) * x[cond1]
     y[cond2] = c - np.exp(-eps_DP) * (x[cond2] - c)
-    # y[cond3] remains 0 as initialized
     
     return x, y

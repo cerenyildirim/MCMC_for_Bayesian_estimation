@@ -40,7 +40,7 @@ def run_real_data_experiments():
     ]
     # Check if data files exist before proceeding
     for f in filenames:
-        if not os.path.exists(f'./data/{f}'):
+        if not os.path.exists(f'../data/{f}'):
             print(f"Error: Data file '{f}' not found. This script cannot run without it.")
             print("Please place the required data files in the same directory.")
             return
@@ -79,8 +79,8 @@ def run_real_data_experiments():
 
     for fn, filename in enumerate(filenames):
         print(f"\n--- Processing file: {filename} ({fn+1}/{L_f}) ---")
-        print(f'./data/{filename}')
-        l_0_matrix, l_1_matrix = read_losses(f'./data/{filename}')
+        print(f'../data/{filename}')
+        l_0_matrix, l_1_matrix = read_losses(f'../data/{filename}')
 
         print("Calculating errors (Type I/II)...")
         # Leave-one-out cross-validation to get error rates
