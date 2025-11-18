@@ -1,6 +1,7 @@
 # MCMC for Bayesian Estimation of Differential Privacy from Membership Inference Attacks
 
-This repository includes the implementation of the paper "MCMC for Bayesian estimation of Differential Privacy from Membership Inference Attacks" (https://link.springer.com/chapter/10.1007/978-3-032-06096-9_23). The code supports both artificial and real data experiments, and includes scripts for running attacks, estimating DP parameters, and visualizing results.
+This repository includes the implementation of the paper "MCMC for Bayesian estimation of Differential Privacy from Membership Inference Attacks" ```markdown
+[Paper](https://link.springer.com/chapter/10.1007/978-3-032-06096-9_23)```. The code supports both artificial and real data experiments, and includes scripts for running attacks, estimating DP parameters, and visualizing results.
 
 
 ## File and Script Descriptions
@@ -32,6 +33,7 @@ This repository includes both the MATLAB and the Python version of the source co
 ## Citation 
 
 If you use this code in your research, please cite:
+```bibtex
 @InProceedings{10.1007/978-3-032-06096-9_23,
     author="Y{\i}ld{\i}r{\i}m, Ceren
     and Kaya, Kamer
@@ -54,6 +56,7 @@ If you use this code in your research, please cite:
     abstract="We propose a new framework for Bayesian estimation of differential privacy, incorporating evidence from multiple membership inference attacks (MIA). Bayesian estimation is carried out via a Markov Chain Monte Carlo (MCMC) algorithm, named MCMC-DP-Est, which provides an estimate of the full posterior distribution of the privacy parameter (e.g., instead of just credible intervals). Critically, the proposed method does not assume that privacy auditing is performed with the most powerful attack on the worst-case (dataset, challenge point) pair, which is typically unrealistic. Instead, MCMC-DP-Est jointly estimates the strengths of MIAs used and the privacy of the training algorithm, yielding a more cautious privacy analysis. We also present an economical way to generate measurements for the performance of an MIA that is to be used by the MCMC method to estimate privacy. We present the use of the methods with numerical examples with both artificial and real data.",
     isbn="978-3-032-06096-9"
 }
+```
 
 ## Contact
 
