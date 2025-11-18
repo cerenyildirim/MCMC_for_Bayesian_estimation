@@ -1,7 +1,6 @@
 # MCMC for Bayesian Estimation of Differential Privacy from Membership Inference Attacks
 
-This repository includes the implementation of the paper "MCMC for Bayesian estimation of Differential Privacy from Membership Inference Attacks" ```markdown
-[Paper](https://link.springer.com/chapter/10.1007/978-3-032-06096-9_23)```. The code supports both artificial and real data experiments, and includes scripts for running attacks, estimating DP parameters, and visualizing results.
+This repository includes the implementation of the paper "MCMC for Bayesian estimation of Differential Privacy from Membership Inference Attacks" (https://link.springer.com/chapter/10.1007/978-3-032-06096-9_23). The code supports both artificial and real data experiments, and includes scripts for running attacks, estimating DP parameters, and visualizing results.
 
 
 ## File and Script Descriptions
