@@ -1,6 +1,6 @@
 # MCMC for Bayesian Estimation of Differential Privacy from Membership Inference Attacks
 
-This repository includes the implementation of the paper "MCMC for Bayesian estimation of Differential Privacy from Membership Inference Attacks" (https://www.arxiv.org/pdf/2504.16683). The code supports both artificial and real data experiments, and includes scripts for running attacks, estimating DP parameters, and visualizing results.
+This repository includes the implementation of the paper "MCMC for Bayesian estimation of Differential Privacy from Membership Inference Attacks" (https://link.springer.com/chapter/10.1007/978-3-032-06096-9_23). The code supports both artificial and real data experiments, and includes scripts for running attacks, estimating DP parameters, and visualizing results.
 
 
 ## File and Script Descriptions
@@ -28,22 +28,32 @@ This repository includes both the MATLAB and the Python version of the source co
 - **dp_attack_*.txt**: Output files containing loss metrics from MIA experiments under various DP/no-DP and weight initialization settings.
 - **sample_info_n_1000.txt**: Stores indices and sample information for real data experiments (used by both MATLAB and Python scripts).
 
-## Usage
 
-### MATLAB
-1. Add the `matlab/src/` directory to your MATLAB path:
-    ```matlab
-    addpath('src')
-    ```
-2. Run experiment scripts from the `matlab/experiments/` directory to reproduce results and figures from the paper.
+## Citation 
 
-### Python
-1. Install required packages (TensorFlow, NumPy, SciPy).
-2. Run `main_measure_mia.py` from the `analysis/` directory to generate MIA results for real data.
-3. Run experiment scripts from the `python/experiments/` directory to reproduce results and figures from the paper.
-
-### Data
-- All experiment outputs and sample indices are stored in the `data/` directory. Experiment scripts read these files for analysis and plotting.
+If you use this code in your research, please cite:
+@InProceedings{10.1007/978-3-032-06096-9_23,
+    author="Y{\i}ld{\i}r{\i}m, Ceren
+    and Kaya, Kamer
+    and Y{\i}ld{\i}r{\i}m, Sinan
+    and Sava{\c{s}}, Erkay",
+    editor="Ribeiro, Rita P.
+    and Pfahringer, Bernhard
+    and Japkowicz, Nathalie
+    and Larra{\~{n}}aga, Pedro
+    and Jorge, Al{\'i}pio M.
+    and Soares, Carlos
+    and Abreu, Pedro H.
+    and Gama, Jo{\~a}o",
+    title="MCMC for Bayesian Estimation of Differential Privacy from Membership Inference Attacks",
+    booktitle="Machine Learning and Knowledge Discovery in Databases. Research Track",
+    year="2026",
+    publisher="Springer Nature Switzerland",
+    address="Cham",
+    pages="397--414",
+    abstract="We propose a new framework for Bayesian estimation of differential privacy, incorporating evidence from multiple membership inference attacks (MIA). Bayesian estimation is carried out via a Markov Chain Monte Carlo (MCMC) algorithm, named MCMC-DP-Est, which provides an estimate of the full posterior distribution of the privacy parameter (e.g., instead of just credible intervals). Critically, the proposed method does not assume that privacy auditing is performed with the most powerful attack on the worst-case (dataset, challenge point) pair, which is typically unrealistic. Instead, MCMC-DP-Est jointly estimates the strengths of MIAs used and the privacy of the training algorithm, yielding a more cautious privacy analysis. We also present an economical way to generate measurements for the performance of an MIA that is to be used by the MCMC method to estimate privacy. We present the use of the methods with numerical examples with both artificial and real data.",
+    isbn="978-3-032-06096-9"
+}
 
 ## Contact
 
